@@ -18,11 +18,6 @@ const DateSearch = (props) => {
 
     
     
-    
-    
-    
-    
-    
     return (
         
         
