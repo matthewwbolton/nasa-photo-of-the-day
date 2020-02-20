@@ -1,21 +1,20 @@
-import React, { useRef } from "react";
-import moment from "moment";
+import React, { useState } from "react";
 
 
 const DateSearch = (props) => {
 
-    const dateRef = useRef(null);
-    const submitRef = useRef(null);
-    
+    const [date1, setDate1] = useState();
 
-    const handleDate = (e) => {
-        // e.preventDefault();
-       let dateInput = dateRef.current.value;
-       console.log(dateInput)
-       return dateInput;
+    function handleDate(e){
+        setDate1(e.target.value);
+        console.log(date1);
     }
 
-   
+    function handleSubmit(e){
+        e.preventDefault();
+        props.setDate(date1);
+        console.log(props.date);
+    }
 
     
     
@@ -30,9 +29,9 @@ const DateSearch = (props) => {
         <form>
             <label>
                 Date:
-                <input onChange =  {() => {props.setDate(handleDate)}} ref = {dateRef} id = 'myDate' type = 'text' placeholder = "YYYY-MM-DD"></input>
+                <input onChange =  {(e) => {handleDate(e)}} id = 'myDate' type = 'text' placeholder = "YYYY-MM-DD"></input>
             </label>
-            <button ref={submitRef}>Submit</button>
+            <button onClick = {(e) => {handleSubmit(e)}}>Submit</button>
         </form>
 
     )
