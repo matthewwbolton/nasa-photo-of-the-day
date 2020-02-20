@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import DateSearch from '../CardContainer/DateSearch'
-
-import Card from './Card';
+import PhotoCard from './PhotoCard';
+import NavBar from './NavBar';
+import styled from 'styled-components';
 import axios from 'axios';
+
+const WrapperDiv = styled.div`
+    margin: 0 8%;
+`;
 
 
 const CardPage = () => {
@@ -38,10 +43,11 @@ const CardPage = () => {
     
     return (
 
-        <div>
+        <WrapperDiv>
+            <NavBar />
             <DateSearch date={date} setDate={setDate}/>
-            <Card title = {nasaData.title} date={nasaData.date} imgUrl = {nasaData.url} explanation={nasaData.explanation} />
-        </div>
+            <PhotoCard title = {nasaData.title} date={nasaData.date} imgUrl = {nasaData.url} explanation={nasaData.explanation} />
+        </WrapperDiv>
     
 )
 
