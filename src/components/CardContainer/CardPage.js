@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const CardPage = () => {
 
-    var today = new window.Date();
+    let today = new window.Date();
     let dd = String(today.getDate());
     let mm = String(today.getMonth() + 1);
     let yyyy = today.getFullYear();
