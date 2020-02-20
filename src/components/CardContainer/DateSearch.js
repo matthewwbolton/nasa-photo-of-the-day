@@ -8,12 +8,11 @@ const DateSearch = (props) => {
     const submitRef = useRef(null);
     
 
-    const handleDate = () => {
-       const dateInput = dateRef.current.value;
+    const handleDate = (e) => {
+        // e.preventDefault();
+       let dateInput = dateRef.current.value;
        console.log(dateInput)
        return dateInput;
-        
-
     }
 
    
@@ -33,8 +32,10 @@ const DateSearch = (props) => {
                 Date:
                 <input ref = {dateRef} id = 'myDate' type = 'text' placeholder = "YYYY-MM-DD"></input>
             </label>
-            <button onClick = {() => {props.setDate(handleDate())}} ref={submitRef}>Submit</button>
+            <button ref={submitRef}>Submit</button>
         </form>
+
+// onChange = {() => {props.setDate(handleDate())}}
     )
 
 }
