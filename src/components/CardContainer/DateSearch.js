@@ -30,12 +30,11 @@ const DateSearch = (props) => {
         <form>
             <label>
                 Date:
-                <input ref = {dateRef} id = 'myDate' type = 'text' placeholder = "YYYY-MM-DD"></input>
+                <input onChange =  {() => {props.setDate(handleDate)}} ref = {dateRef} id = 'myDate' type = 'text' placeholder = "YYYY-MM-DD"></input>
             </label>
             <button ref={submitRef}>Submit</button>
         </form>
 
-// onChange = {() => {props.setDate(handleDate())}}
     )
 
 }
